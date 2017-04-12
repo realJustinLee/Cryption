@@ -1,0 +1,8 @@
+D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\bin\Release\Cryption.exe.config
+D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\bin\Release\Cryption.exe
+D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\bin\Release\Cryption.pdb
+D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\WindowsFormsApp1.Cryption.resources
+D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\Cryption.Properties.Resources.resources
+D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\Cryption.csproj.GenerateResource.Cache
+D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\Cryption.exe
+D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\Cryption.pdb
