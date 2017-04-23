@@ -6,3 +6,12 @@ D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\Crypt
 D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\Cryption.csproj.GenerateResource.Cache
 D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\Cryption.exe
 D:\GitHub\C-Works\VisualStudio 2017\Cryption\Cryption\Cryption\obj\Release\Cryption.pdb
+D:\GitHub\Cryption\Cryption\Cryption\bin\Release\Cryption.exe.config
+D:\GitHub\Cryption\Cryption\Cryption\bin\Release\Cryption.exe
+D:\GitHub\Cryption\Cryption\Cryption\bin\Release\Cryption.pdb
+D:\GitHub\Cryption\Cryption\Cryption\obj\Release\WindowsFormsApp1.Cryption.resources
+D:\GitHub\Cryption\Cryption\Cryption\obj\Release\Cryption.Properties.Resources.resources
+D:\GitHub\Cryption\Cryption\Cryption\obj\Release\Cryption.csproj.GenerateResource.Cache
+D:\GitHub\Cryption\Cryption\Cryption\obj\Release\Cryption.exe
+D:\GitHub\Cryption\Cryption\Cryption\obj\Release\Cryption.pdb
+D:\GitHub\Cryption\Cryption\Cryption\obj\Release\Cryption.csprojResolveAssemblyReference.cache

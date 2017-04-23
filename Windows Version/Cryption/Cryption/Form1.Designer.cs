@@ -87,6 +87,20 @@
             this.buttonDesEncode = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.tabPageAesSha = new System.Windows.Forms.TabPage();
+            this.buttonAesDecode = new System.Windows.Forms.Button();
+            this.textBoxImputAesPasswd = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBoxSetAesPasswd = new System.Windows.Forms.TextBox();
+            this.buttonAesEncode = new System.Windows.Forms.Button();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.buttonSHA = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.radioButtonSHA512 = new System.Windows.Forms.RadioButton();
+            this.radioButtonSHA256 = new System.Windows.Forms.RadioButton();
+            this.radioButtonSHA1 = new System.Windows.Forms.RadioButton();
             this.textBoxCrypOrigin = new System.Windows.Forms.TextBox();
             this.textBoxCrypted = new System.Windows.Forms.TextBox();
             this.textBoxDecOrigin = new System.Windows.Forms.TextBox();
@@ -96,20 +110,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.radioButtonSHA1 = new System.Windows.Forms.RadioButton();
-            this.radioButtonSHA256 = new System.Windows.Forms.RadioButton();
-            this.radioButtonSHA512 = new System.Windows.Forms.RadioButton();
-            this.label28 = new System.Windows.Forms.Label();
-            this.buttonSHA = new System.Windows.Forms.Button();
-            this.tabPageAesSha = new System.Windows.Forms.TabPage();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.buttonAesDecode = new System.Windows.Forms.Button();
-            this.textBoxImputAesPasswd = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.textBoxSetAesPasswd = new System.Windows.Forms.TextBox();
-            this.buttonAesEncode = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
             this.tabPagesModeSelect.SuspendLayout();
             this.tabPageCer.SuspendLayout();
             this.tabPageRSA.SuspendLayout();
@@ -130,6 +130,7 @@
             // 
             // tabPagesModeSelect
             // 
+            this.tabPagesModeSelect.AllowDrop = true;
             this.tabPagesModeSelect.Controls.Add(this.tabPageCer);
             this.tabPagesModeSelect.Controls.Add(this.tabPageRSA);
             this.tabPagesModeSelect.Controls.Add(this.tabPageMd5Des);
@@ -145,6 +146,7 @@
             // 
             // tabPageCer
             // 
+            this.tabPageCer.AllowDrop = true;
             this.tabPageCer.Controls.Add(this.buttonCreatePfx);
             this.tabPageCer.Controls.Add(this.textBoxCnName);
             this.tabPageCer.Controls.Add(this.label9);
@@ -760,145 +762,6 @@
             this.label18.TabIndex = 32;
             this.label18.Text = "设置密码：";
             // 
-            // textBoxCrypOrigin
-            // 
-            this.textBoxCrypOrigin.Location = new System.Drawing.Point(605, 162);
-            this.textBoxCrypOrigin.Multiline = true;
-            this.textBoxCrypOrigin.Name = "textBoxCrypOrigin";
-            this.textBoxCrypOrigin.Size = new System.Drawing.Size(434, 78);
-            this.textBoxCrypOrigin.TabIndex = 0;
-            // 
-            // textBoxCrypted
-            // 
-            this.textBoxCrypted.BackColor = System.Drawing.Color.GhostWhite;
-            this.textBoxCrypted.Enabled = false;
-            this.textBoxCrypted.Location = new System.Drawing.Point(605, 263);
-            this.textBoxCrypted.Multiline = true;
-            this.textBoxCrypted.Name = "textBoxCrypted";
-            this.textBoxCrypted.Size = new System.Drawing.Size(434, 78);
-            this.textBoxCrypted.TabIndex = 5;
-            this.textBoxCrypted.TextChanged += new System.EventHandler(this.textBoxCrypted_TextChanged);
-            // 
-            // textBoxDecOrigin
-            // 
-            this.textBoxDecOrigin.Location = new System.Drawing.Point(605, 364);
-            this.textBoxDecOrigin.Multiline = true;
-            this.textBoxDecOrigin.Name = "textBoxDecOrigin";
-            this.textBoxDecOrigin.Size = new System.Drawing.Size(434, 78);
-            this.textBoxDecOrigin.TabIndex = 6;
-            // 
-            // textBoxDecrypted
-            // 
-            this.textBoxDecrypted.BackColor = System.Drawing.Color.GhostWhite;
-            this.textBoxDecrypted.Enabled = false;
-            this.textBoxDecrypted.Location = new System.Drawing.Point(605, 465);
-            this.textBoxDecrypted.Multiline = true;
-            this.textBoxDecrypted.Name = "textBoxDecrypted";
-            this.textBoxDecrypted.Size = new System.Drawing.Size(434, 78);
-            this.textBoxDecrypted.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(602, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "待加密文本";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(602, 243);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "加密后的文本";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(602, 344);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "待解密/认证文本";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(602, 445);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "解密/认证后的文本";
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.Location = new System.Drawing.Point(964, 136);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(75, 23);
-            this.buttonClear.TabIndex = 12;
-            this.buttonClear.Text = "清空数据";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
-            // 
-            // radioButtonSHA1
-            // 
-            this.radioButtonSHA1.AutoSize = true;
-            this.radioButtonSHA1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButtonSHA1.Location = new System.Drawing.Point(57, 177);
-            this.radioButtonSHA1.Name = "radioButtonSHA1";
-            this.radioButtonSHA1.Size = new System.Drawing.Size(57, 21);
-            this.radioButtonSHA1.TabIndex = 0;
-            this.radioButtonSHA1.TabStop = true;
-            this.radioButtonSHA1.Text = "SHA1";
-            this.radioButtonSHA1.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSHA256
-            // 
-            this.radioButtonSHA256.AutoSize = true;
-            this.radioButtonSHA256.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButtonSHA256.Location = new System.Drawing.Point(142, 177);
-            this.radioButtonSHA256.Name = "radioButtonSHA256";
-            this.radioButtonSHA256.Size = new System.Drawing.Size(71, 21);
-            this.radioButtonSHA256.TabIndex = 1;
-            this.radioButtonSHA256.TabStop = true;
-            this.radioButtonSHA256.Text = "SHA256";
-            this.radioButtonSHA256.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSHA512
-            // 
-            this.radioButtonSHA512.AutoSize = true;
-            this.radioButtonSHA512.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButtonSHA512.Location = new System.Drawing.Point(243, 177);
-            this.radioButtonSHA512.Name = "radioButtonSHA512";
-            this.radioButtonSHA512.Size = new System.Drawing.Size(71, 21);
-            this.radioButtonSHA512.TabIndex = 2;
-            this.radioButtonSHA512.TabStop = true;
-            this.radioButtonSHA512.Text = "SHA512";
-            this.radioButtonSHA512.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.Purple;
-            this.label28.Location = new System.Drawing.Point(11, 16);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(0, 21);
-            this.label28.TabIndex = 3;
-            // 
-            // buttonSHA
-            // 
-            this.buttonSHA.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSHA.Location = new System.Drawing.Point(337, 175);
-            this.buttonSHA.Name = "buttonSHA";
-            this.buttonSHA.Size = new System.Drawing.Size(75, 23);
-            this.buttonSHA.TabIndex = 4;
-            this.buttonSHA.Text = " 加密";
-            this.buttonSHA.UseVisualStyleBackColor = true;
-            this.buttonSHA.Click += new System.EventHandler(this.buttonSHA_Click);
-            // 
             // tabPageAesSha
             // 
             this.tabPageAesSha.Controls.Add(this.buttonAesDecode);
@@ -921,26 +784,6 @@
             this.tabPageAesSha.TabIndex = 4;
             this.tabPageAesSha.Text = "AES和SHA";
             this.tabPageAesSha.UseVisualStyleBackColor = true;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.Color.Purple;
-            this.label29.Location = new System.Drawing.Point(11, 140);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(106, 21);
-            this.label29.TabIndex = 24;
-            this.label29.Text = "SHA算法测试";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.Color.Purple;
-            this.label30.Location = new System.Drawing.Point(11, 16);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(103, 21);
-            this.label30.TabIndex = 25;
-            this.label30.Text = "AES算法测试";
             // 
             // buttonAesDecode
             // 
@@ -1000,8 +843,172 @@
             this.label34.TabIndex = 38;
             this.label34.Text = "设置密码：";
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Purple;
+            this.label30.Location = new System.Drawing.Point(11, 16);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(103, 21);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "AES算法测试";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Purple;
+            this.label29.Location = new System.Drawing.Point(11, 140);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(106, 21);
+            this.label29.TabIndex = 24;
+            this.label29.Text = "SHA算法测试";
+            // 
+            // buttonSHA
+            // 
+            this.buttonSHA.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonSHA.Location = new System.Drawing.Point(337, 175);
+            this.buttonSHA.Name = "buttonSHA";
+            this.buttonSHA.Size = new System.Drawing.Size(75, 23);
+            this.buttonSHA.TabIndex = 4;
+            this.buttonSHA.Text = " 加密";
+            this.buttonSHA.UseVisualStyleBackColor = true;
+            this.buttonSHA.Click += new System.EventHandler(this.buttonSHA_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Purple;
+            this.label28.Location = new System.Drawing.Point(11, 16);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(0, 21);
+            this.label28.TabIndex = 3;
+            // 
+            // radioButtonSHA512
+            // 
+            this.radioButtonSHA512.AutoSize = true;
+            this.radioButtonSHA512.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonSHA512.Location = new System.Drawing.Point(243, 177);
+            this.radioButtonSHA512.Name = "radioButtonSHA512";
+            this.radioButtonSHA512.Size = new System.Drawing.Size(71, 21);
+            this.radioButtonSHA512.TabIndex = 2;
+            this.radioButtonSHA512.TabStop = true;
+            this.radioButtonSHA512.Text = "SHA512";
+            this.radioButtonSHA512.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSHA256
+            // 
+            this.radioButtonSHA256.AutoSize = true;
+            this.radioButtonSHA256.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonSHA256.Location = new System.Drawing.Point(142, 177);
+            this.radioButtonSHA256.Name = "radioButtonSHA256";
+            this.radioButtonSHA256.Size = new System.Drawing.Size(71, 21);
+            this.radioButtonSHA256.TabIndex = 1;
+            this.radioButtonSHA256.TabStop = true;
+            this.radioButtonSHA256.Text = "SHA256";
+            this.radioButtonSHA256.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSHA1
+            // 
+            this.radioButtonSHA1.AutoSize = true;
+            this.radioButtonSHA1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonSHA1.Location = new System.Drawing.Point(57, 177);
+            this.radioButtonSHA1.Name = "radioButtonSHA1";
+            this.radioButtonSHA1.Size = new System.Drawing.Size(57, 21);
+            this.radioButtonSHA1.TabIndex = 0;
+            this.radioButtonSHA1.TabStop = true;
+            this.radioButtonSHA1.Text = "SHA1";
+            this.radioButtonSHA1.UseVisualStyleBackColor = true;
+            // 
+            // textBoxCrypOrigin
+            // 
+            this.textBoxCrypOrigin.AllowDrop = true;
+            this.textBoxCrypOrigin.Location = new System.Drawing.Point(605, 162);
+            this.textBoxCrypOrigin.Multiline = true;
+            this.textBoxCrypOrigin.Name = "textBoxCrypOrigin";
+            this.textBoxCrypOrigin.Size = new System.Drawing.Size(434, 78);
+            this.textBoxCrypOrigin.TabIndex = 0;
+            // 
+            // textBoxCrypted
+            // 
+            this.textBoxCrypted.AllowDrop = true;
+            this.textBoxCrypted.BackColor = System.Drawing.Color.GhostWhite;
+            this.textBoxCrypted.Enabled = false;
+            this.textBoxCrypted.Location = new System.Drawing.Point(605, 263);
+            this.textBoxCrypted.Multiline = true;
+            this.textBoxCrypted.Name = "textBoxCrypted";
+            this.textBoxCrypted.Size = new System.Drawing.Size(434, 78);
+            this.textBoxCrypted.TabIndex = 5;
+            this.textBoxCrypted.TextChanged += new System.EventHandler(this.textBoxCrypted_TextChanged);
+            // 
+            // textBoxDecOrigin
+            // 
+            this.textBoxDecOrigin.AllowDrop = true;
+            this.textBoxDecOrigin.Location = new System.Drawing.Point(605, 364);
+            this.textBoxDecOrigin.Multiline = true;
+            this.textBoxDecOrigin.Name = "textBoxDecOrigin";
+            this.textBoxDecOrigin.Size = new System.Drawing.Size(434, 78);
+            this.textBoxDecOrigin.TabIndex = 6;
+            // 
+            // textBoxDecrypted
+            // 
+            this.textBoxDecrypted.AllowDrop = true;
+            this.textBoxDecrypted.BackColor = System.Drawing.Color.GhostWhite;
+            this.textBoxDecrypted.Enabled = false;
+            this.textBoxDecrypted.Location = new System.Drawing.Point(605, 465);
+            this.textBoxDecrypted.Multiline = true;
+            this.textBoxDecrypted.Name = "textBoxDecrypted";
+            this.textBoxDecrypted.Size = new System.Drawing.Size(434, 78);
+            this.textBoxDecrypted.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(602, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "待加密文本";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(602, 243);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "加密后的文本";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(602, 344);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "待解密/认证文本";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(602, 445);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "解密/认证后的文本";
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(964, 136);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.TabIndex = 12;
+            this.buttonClear.Text = "清空数据";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // Cryption
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
