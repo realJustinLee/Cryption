@@ -12,7 +12,7 @@
 - [x] 数字证书
 
 ## macOS Version 0.0.0 (Is on the way)
-### 环境 macOS 10.12.5 Beta (16F60a) ，Xcode 8.3.2 (8E2002)
+### 环境 macOS 10.12.5 Beta (16F67a) ，Xcode 8.3.2 (8E2002)
 正在加班加点地赶出来，希望大家耐心等待。
 >进度：
 - [x] MD5
