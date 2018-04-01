@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PythonTrojan.iml" filepath="$PROJECT_DIR$/.idea/PythonTrojan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cryption.iml" filepath="$PROJECT_DIR$/Cryption.iml" />
     </modules>
   </component>
 </project>
