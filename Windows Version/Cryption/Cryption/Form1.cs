@@ -383,12 +383,12 @@ namespace WindowsFormsApp1
                 MessageBox.Show("密码为空，使用默认密码");
                 textBoxSetAesPasswd.Text = "MdM5jkH7HfhGFRk7";
             }
-            if (textBoxSetAesPasswd.Text.Length != 16)
-            {
-                MessageBox.Show("请输入长度为16位的密码");
-            }
             else
             {
+                if (textBoxSetAesPasswd.Text.Length > 16)
+                {
+                    MessageBox.Show("密码长度超过16位，将只使用前16位");
+                }
                 String iv = "MdM5jkH7HfhGFRk7";
                 textBoxCrypted.Text = AESEncode(textBoxCrypOrigin.Text, textBoxSetAesPasswd.Text, iv);
             }
@@ -405,12 +405,12 @@ namespace WindowsFormsApp1
                 MessageBox.Show("密码为空，将使用默认密码进行 Brute Force 破解");
                 textBoxImputAesPasswd.Text = "MdM5jkH7HfhGFRk7";
             }
-            if (textBoxImputAesPasswd.Text.Length != 16)
-            {
-                MessageBox.Show("请输入长度为16位的密码");
-            }
             else
             {
+                if (textBoxImputAesPasswd.Text.Length > 16)
+                {
+                    MessageBox.Show("密码长度超过16位，将只使用前16位");
+                }
                 String iv = "MdM5jkH7HfhGFRk7";
                 textBoxDecrypted.Text = AESDecode(textBoxDecOrigin.Text, textBoxImputAesPasswd.Text, iv);
             }
