@@ -18,12 +18,12 @@ import java.awt.SystemColor;
 public class MainFrame extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField textFieldCrySrc;
+	private JTextField textFieldCryDes;
+	private JTextField textFieldDecSrc;
+	private JTextField textFieldDecDes;
+	private JTextField textFieldSetAesPwd;
+	private JTextField textFieldInputAesPwd;
 
 	/**
 	 * Launch the application.
@@ -53,139 +53,145 @@ public class MainFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel label = new JLabel("\u52A0\u5BC6\u4E0E\u89E3\u5BC6\u7B97\u6CD5\u6D4B\u8BD5");
-		label.setForeground(new Color(30, 144, 255));
-		label.setFont(new Font("΢���ź�", Font.PLAIN, 36));
-		label.setBounds(170, 40, 500, 80);
-		contentPane.add(label);
+		JLabel labelTitle = new JLabel("\u52A0\u5BC6\u4E0E\u89E3\u5BC6\u7B97\u6CD5\u6D4B\u8BD5");
+		labelTitle.setForeground(new Color(30, 144, 255));
+		labelTitle.setFont(new Font("PingFang SC", Font.PLAIN, 36));
+		labelTitle.setBounds(170, 40, 500, 80);
+		contentPane.add(labelTitle);
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setFont(new Font("΢���ź�", Font.PLAIN, 16));
-		tabbedPane.setBounds(170, 130, 486, 560);
-		contentPane.add(tabbedPane);
+		JTabbedPane tabbedPanelAlgorithm = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPanelAlgorithm.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		tabbedPanelAlgorithm.setBounds(170, 130, 486, 560);
+		contentPane.add(tabbedPanelAlgorithm);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		tabbedPane.addTab("AES 和 SHA", null, panel, null);
-		panel.setLayout(null);
+		JPanel panelAESAndSHA = new JPanel();
+		panelAESAndSHA.setBackground(Color.WHITE);
+		tabbedPanelAlgorithm.addTab("AES 和 SHA", null, panelAESAndSHA, null);
+		panelAESAndSHA.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("AES\u7B97\u6CD5\u6D4B\u8BD5");
-		lblNewLabel_1.setForeground(new Color(30, 144, 255));
-		lblNewLabel_1.setFont(new Font("΢���ź�", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(27, 10, 93, 29);
-		panel.add(lblNewLabel_1);
+		JLabel labelAes = new JLabel("AES\u7B97\u6CD5\u6D4B\u8BD5");
+		labelAes.setForeground(new Color(30, 144, 255));
+		labelAes.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		labelAes.setBounds(27, 10, 93, 29);
+		panelAESAndSHA.add(labelAes);
 		
-		JLabel label_4 = new JLabel("\u8BBE\u7F6E\u5BC6\u7801\uFF1A");
-		label_4.setFont(new Font("΢���ź�", Font.PLAIN, 12));
-		label_4.setBounds(60, 49, 60, 15);
-		panel.add(label_4);
+		JLabel labelSetAesPwd = new JLabel("\u8BBE\u7F6E\u5BC6\u7801\uFF1A");
+		labelSetAesPwd.setFont(new Font("PingFang SC", Font.PLAIN, 12));
+		labelSetAesPwd.setBounds(60, 50, 60, 15);
+		panelAESAndSHA.add(labelSetAesPwd);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(130, 46, 220, 21);
-		panel.add(textField_4);
-		textField_4.setColumns(10);
+		textFieldSetAesPwd = new JTextField();
+		textFieldSetAesPwd.setBounds(130, 46, 220, 21);
+		panelAESAndSHA.add(textFieldSetAesPwd);
+		textFieldSetAesPwd.setColumns(10);
 		
-		JButton btnNewButton = new JButton("加密");
-		btnNewButton.setBounds(362, 149, 93, 29);
-		panel.add(btnNewButton);
+		JButton buttonEnAes = new JButton("加密");
+		buttonEnAes.setBounds(362, 43, 93, 29);
+		panelAESAndSHA.add(buttonEnAes);
 		
-		JLabel label_5 = new JLabel("输入密码：");
-		label_5.setFont(new Font("΢���ź�", Font.PLAIN, 12));
-		label_5.setBounds(60, 82, 60, 15);
-		panel.add(label_5);
+		JLabel labelInputAesPwd = new JLabel("输入密码：");
+		labelInputAesPwd.setFont(new Font("PingFang SC", Font.PLAIN, 12));
+		labelInputAesPwd.setBounds(60, 82, 60, 15);
+		panelAESAndSHA.add(labelInputAesPwd);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(130, 79, 220, 21);
-		panel.add(textField_5);
-		textField_5.setColumns(10);
+		textFieldInputAesPwd = new JTextField();
+		textFieldInputAesPwd.setBounds(130, 79, 220, 21);
+		panelAESAndSHA.add(textFieldInputAesPwd);
+		textFieldInputAesPwd.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("解密");
-		btnNewButton_1.setBounds(362, 76, 93, 29);
-		panel.add(btnNewButton_1);
+		JButton buttonDeAes = new JButton("解密");
+		buttonDeAes.setBounds(362, 76, 93, 29);
+		panelAESAndSHA.add(buttonDeAes);
 		
-		JLabel label_6 = new JLabel("SHA算法测试");
-		label_6.setForeground(new Color(30, 144, 255));
-		label_6.setFont(new Font("Dialog", Font.PLAIN, 16));
-		label_6.setBounds(27, 109, 104, 29);
-		panel.add(label_6);
+		JLabel labelSha = new JLabel("SHA算法测试");
+		labelSha.setForeground(new Color(30, 144, 255));
+		labelSha.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		labelSha.setBounds(27, 109, 104, 29);
+		panelAESAndSHA.add(labelSha);
 		
-		JRadioButton rdbtnSha = new JRadioButton(" SHA 1");
-		rdbtnSha.setSelected(true);
-		rdbtnSha.setBounds(60, 150, 82, 23);
-		panel.add(rdbtnSha);
+		JRadioButton rdbtnSha1 = new JRadioButton(" SHA 1");
+		rdbtnSha1.setSelected(true);
+		rdbtnSha1.setBounds(60, 150, 82, 23);
+		panelAESAndSHA.add(rdbtnSha1);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("SHA 256");
-		rdbtnNewRadioButton.setBounds(154, 150, 93, 23);
-		panel.add(rdbtnNewRadioButton);
+		JRadioButton rdbtnSha256 = new JRadioButton("SHA 256");
+		rdbtnSha256.setBounds(154, 150, 93, 23);
+		panelAESAndSHA.add(rdbtnSha256);
 		
-		JRadioButton rdbtnSha_1 = new JRadioButton("SHA 512");
-		rdbtnSha_1.setBounds(258, 150, 93, 23);
-		panel.add(rdbtnSha_1);
+		JRadioButton rdbtnSha512 = new JRadioButton("SHA 512");
+		rdbtnSha512.setBounds(258, 150, 93, 23);
+		panelAESAndSHA.add(rdbtnSha512);
 		
-		JButton button_1 = new JButton("加密");
-		button_1.setBounds(362, 43, 93, 29);
-		panel.add(button_1);
+		JButton buttonSha = new JButton("加密");
+		buttonSha.setBounds(362, 149, 93, 29);
+		panelAESAndSHA.add(buttonSha);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.WHITE);
-		tabbedPane.addTab("DES", null, panel_1, null);
-		panel_1.setLayout(null);
+		JPanel panelMD5AndDES = new JPanel();
+		panelMD5AndDES.setBackground(Color.WHITE);
+		tabbedPanelAlgorithm.addTab("MD5 和 DES", null, panelMD5AndDES, null);
+		panelMD5AndDES.setLayout(null);
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(Color.WHITE);
-		tabbedPane.addTab("公钥和私钥", null, panel_2, null);
-		panel_2.setLayout(null);
+		JLabel labelMd5 = new JLabel("MD5算法测试");
+		labelMd5.setForeground(new Color(30, 144, 255));
+		labelMd5.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		labelMd5.setBounds(27, 10, 104, 29);
+		panelMD5AndDES.add(labelMd5);
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(Color.WHITE);
-		tabbedPane.addTab("数字证书", null, panel_3, null);
-		panel_3.setLayout(null);
+		JPanel panelRSA = new JPanel();
+		panelRSA.setBackground(Color.WHITE);
+		tabbedPanelAlgorithm.addTab("RSA 加密", null, panelRSA, null);
+		panelRSA.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u5F85\u52A0\u5BC6\u6587\u672C");
-		lblNewLabel.setFont(new Font("΢���ź�", Font.PLAIN, 12));
-		lblNewLabel.setBounds(701, 130, 60, 22);
-		contentPane.add(lblNewLabel);
+		JPanel panelCertification = new JPanel();
+		panelCertification.setBackground(Color.WHITE);
+		tabbedPanelAlgorithm.addTab("创建证书", null, panelCertification, null);
+		panelCertification.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(699, 162, 400, 100);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		JLabel labelCrySrc = new JLabel("\u5F85\u52A0\u5BC6\u6587\u672C");
+		labelCrySrc.setFont(new Font("PingFang SC", Font.PLAIN, 12));
+		labelCrySrc.setBounds(701, 130, 60, 22);
+		contentPane.add(labelCrySrc);
 		
-		JLabel label_1 = new JLabel("\u52A0\u5BC6\u540E\u7684\u6587\u672C");
-		label_1.setFont(new Font("΢���ź�", Font.PLAIN, 12));
-		label_1.setBounds(699, 272, 72, 22);
-		contentPane.add(label_1);
+		textFieldCrySrc = new JTextField();
+		textFieldCrySrc.setBounds(699, 162, 400, 100);
+		contentPane.add(textFieldCrySrc);
+		textFieldCrySrc.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setEnabled(false);
-		textField_1.setBounds(699, 304, 400, 100);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		JLabel labelCryDes = new JLabel("\u52A0\u5BC6\u540E\u7684\u6587\u672C");
+		labelCryDes.setFont(new Font("PingFang SC", Font.PLAIN, 12));
+		labelCryDes.setBounds(699, 272, 72, 22);
+		contentPane.add(labelCryDes);
 		
-		JLabel label_2 = new JLabel("\u5F85\u89E3\u5BC6/\u8BA4\u8BC1\u6587\u672C");
-		label_2.setFont(new Font("΢���ź�", Font.PLAIN, 12));
-		label_2.setBounds(699, 414, 93, 22);
-		contentPane.add(label_2);
+		textFieldCryDes = new JTextField();
+		textFieldCryDes.setEnabled(false);
+		textFieldCryDes.setBounds(699, 304, 400, 100);
+		contentPane.add(textFieldCryDes);
+		textFieldCryDes.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(699, 448, 400, 100);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		JLabel labelDecSrc = new JLabel("\u5F85\u89E3\u5BC6/\u8BA4\u8BC1\u6587\u672C");
+		labelDecSrc.setFont(new Font("PingFang SC", Font.PLAIN, 12));
+		labelDecSrc.setBounds(699, 414, 93, 22);
+		contentPane.add(labelDecSrc);
 		
-		JLabel label_3 = new JLabel("\u89E3\u5BC6/\u8BA4\u8BC1\u540E\u7684\u6587\u672C");
-		label_3.setFont(new Font("΢���ź�", Font.PLAIN, 12));
-		label_3.setBounds(699, 558, 102, 22);
-		contentPane.add(label_3);
+		textFieldDecSrc = new JTextField();
+		textFieldDecSrc.setBounds(699, 448, 400, 100);
+		contentPane.add(textFieldDecSrc);
+		textFieldDecSrc.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setEnabled(false);
-		textField_3.setBounds(699, 590, 400, 100);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		JLabel labelDecDes = new JLabel("\u89E3\u5BC6/\u8BA4\u8BC1\u540E\u7684\u6587\u672C");
+		labelDecDes.setFont(new Font("PingFang SC", Font.PLAIN, 12));
+		labelDecDes.setBounds(699, 558, 102, 22);
+		contentPane.add(labelDecDes);
 		
-		JButton button = new JButton("\u6E05\u7A7A\u6570\u636E");
-		button.setBounds(1006, 133, 93, 29);
-		contentPane.add(button);
-		button.setFont(new Font("΢���ź�", Font.PLAIN, 12));
+		textFieldDecDes = new JTextField();
+		textFieldDecDes.setEnabled(false);
+		textFieldDecDes.setBounds(699, 590, 400, 100);
+		contentPane.add(textFieldDecDes);
+		textFieldDecDes.setColumns(10);
+		
+		JButton buttonClear = new JButton("\u6E05\u7A7A\u6570\u636E");
+		buttonClear.setBounds(1006, 133, 93, 29);
+		contentPane.add(buttonClear);
+		buttonClear.setFont(new Font("PingFang SC", Font.PLAIN, 12));
 	}
 }
