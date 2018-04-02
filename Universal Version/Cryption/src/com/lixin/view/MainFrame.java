@@ -1,16 +1,14 @@
 package com.lixin.view;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import com.lixin.controller.Cryption;
+import com.lixin.model.AES;
+
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JRadioButton;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
 
@@ -30,10 +28,13 @@ public class MainFrame extends JFrame {
     private JTextField textFieldExportCerRoute;
     private JTextField textFieldImportPfxRoute;
     private JTextField textFieldInputPfxPwd;
-    private JTextField textFieldPubKeySouw;
+    private JTextField textFieldPublicKey;
     private JTextField textFieldPrivateKey;
     private JTextField textFieldInputSignature;
-    private JButton buttonExportAsCer;
+    private JRadioButton radioButtonSha1;
+    private JRadioButton radioButtonSha256;
+    private JRadioButton radioButtonSha512;
+
 
     /**
      * Create the frame.
@@ -47,7 +48,7 @@ public class MainFrame extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JLabel labelTitle = new JLabel("\u52A0\u5BC6\u4E0E\u89E3\u5BC6\u7B97\u6CD5\u6D4B\u8BD5");
+        JLabel labelTitle = new JLabel("加密与解密算法测试");
         labelTitle.setForeground(new Color(30, 144, 255));
         labelTitle.setFont(new Font("PingFang SC", Font.PLAIN, 36));
         labelTitle.setBounds(170, 40, 500, 80);
@@ -63,13 +64,13 @@ public class MainFrame extends JFrame {
         tabbedPanelAlgorithm.addTab("AES 和 SHA", null, panelAESAndSHA, null);
         panelAESAndSHA.setLayout(null);
 
-        JLabel labelAes = new JLabel("AES\u7B97\u6CD5\u6D4B\u8BD5");
+        JLabel labelAes = new JLabel("AES算法测试");
         labelAes.setForeground(new Color(30, 144, 255));
         labelAes.setFont(new Font("PingFang SC", Font.PLAIN, 16));
         labelAes.setBounds(27, 10, 100, 29);
         panelAESAndSHA.add(labelAes);
 
-        JLabel labelSetAesPwd = new JLabel("\u8BBE\u7F6E\u5BC6\u7801\uFF1A");
+        JLabel labelSetAesPwd = new JLabel("设置密码：");
         labelSetAesPwd.setFont(new Font("PingFang SC", Font.PLAIN, 13));
         labelSetAesPwd.setBounds(58, 48, 69, 16);
         panelAESAndSHA.add(labelSetAesPwd);
@@ -82,11 +83,13 @@ public class MainFrame extends JFrame {
 
         JButton buttonEnAes = new JButton("加密");
         buttonEnAes.setFont(new Font("PingFang SC", Font.PLAIN, 13));
-//        buttonEnAes.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//
-//            }
-//        });
+        buttonEnAes.addActionListener(e -> {
+            if (textFieldSetAesPwd.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "密码为空，将使用默认密码！", "AES密码提示", JOptionPane.WARNING_MESSAGE);
+                textFieldSetAesPwd.setText("Mds7jhlOI9uT8eEw");
+            }
+            setEncryptedText(AES.AESEncoder(getEncryptionSource(), textFieldSetAesPwd.getText()));
+        });
         buttonEnAes.setBounds(342, 43, 117, 29);
         panelAESAndSHA.add(buttonEnAes);
 
@@ -103,6 +106,13 @@ public class MainFrame extends JFrame {
 
         JButton buttonDeAes = new JButton("解密");
         buttonDeAes.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+        buttonDeAes.addActionListener(e -> {
+            if (textFieldInputAesPwd.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "密码为空，将使用Brute Force破解！", "AES密码提示", JOptionPane.WARNING_MESSAGE);
+                textFieldInputAesPwd.setText("Mds7jhlOI9uT8eEw");
+            }
+            setDecryptedText(AES.AESDecoder(getDecryptionSource(), textFieldInputAesPwd.getText()));
+        });
         buttonDeAes.setBounds(342, 75, 117, 29);
         panelAESAndSHA.add(buttonDeAes);
 
@@ -112,21 +122,26 @@ public class MainFrame extends JFrame {
         labelSha.setBounds(27, 109, 100, 29);
         panelAESAndSHA.add(labelSha);
 
-        JRadioButton rdbtnSha1 = new JRadioButton(" SHA 1");
-        rdbtnSha1.setFont(new Font("PingFang SC", Font.PLAIN, 13));
-        rdbtnSha1.setSelected(true);
-        rdbtnSha1.setBounds(58, 151, 76, 23);
-        panelAESAndSHA.add(rdbtnSha1);
+        radioButtonSha1 = new JRadioButton(" SHA 1");
+        radioButtonSha1.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+        radioButtonSha1.setSelected(true);
+        radioButtonSha1.setBounds(58, 151, 76, 23);
+        panelAESAndSHA.add(radioButtonSha1);
 
-        JRadioButton rdbtnSha256 = new JRadioButton("SHA 256");
-        rdbtnSha256.setFont(new Font("PingFang SC", Font.PLAIN, 13));
-        rdbtnSha256.setBounds(146, 151, 86, 23);
-        panelAESAndSHA.add(rdbtnSha256);
+        radioButtonSha256 = new JRadioButton("SHA 256");
+        radioButtonSha256.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+        radioButtonSha256.setBounds(146, 151, 86, 23);
+        panelAESAndSHA.add(radioButtonSha256);
 
-        JRadioButton rdbtnSha512 = new JRadioButton("SHA 512");
-        rdbtnSha512.setFont(new Font("PingFang SC", Font.PLAIN, 13));
-        rdbtnSha512.setBounds(244, 151, 86, 23);
-        panelAESAndSHA.add(rdbtnSha512);
+        radioButtonSha512 = new JRadioButton("SHA 512");
+        radioButtonSha512.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+        radioButtonSha512.setBounds(244, 151, 86, 23);
+        panelAESAndSHA.add(radioButtonSha512);
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(radioButtonSha1);
+        group.add(radioButtonSha256);
+        group.add(radioButtonSha512);
 
         JButton buttonSha = new JButton("加密");
         buttonSha.setFont(new Font("PingFang SC", Font.PLAIN, 13));
@@ -317,7 +332,7 @@ public class MainFrame extends JFrame {
         buttonSetExportCerRoute.setBounds(342, 234, 117, 29);
         panelCertification.add(buttonSetExportCerRoute);
 
-        buttonExportAsCer = new JButton("导出");
+        JButton buttonExportAsCer = new JButton("导出");
         buttonExportAsCer.setFont(new Font("PingFang SC", Font.PLAIN, 13));
         buttonExportAsCer.setBounds(342, 266, 117, 29);
         panelCertification.add(buttonExportAsCer);
@@ -398,11 +413,11 @@ public class MainFrame extends JFrame {
         labelPubKey.setBounds(88, 219, 39, 16);
         panelRSA.add(labelPubKey);
 
-        textFieldPubKeySouw = new JTextField();
-        textFieldPubKeySouw.setFont(new Font("PingFang SC", Font.PLAIN, 13));
-        textFieldPubKeySouw.setColumns(10);
-        textFieldPubKeySouw.setBounds(135, 213, 300, 80);
-        panelRSA.add(textFieldPubKeySouw);
+        textFieldPublicKey = new JTextField();
+        textFieldPublicKey.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+        textFieldPublicKey.setColumns(10);
+        textFieldPublicKey.setBounds(135, 213, 300, 80);
+        panelRSA.add(textFieldPublicKey);
 
         JLabel labelPrivateKey = new JLabel("私钥：");
         labelPrivateKey.setToolTipText("               ");
@@ -424,7 +439,7 @@ public class MainFrame extends JFrame {
         buttonDeCryptPublic.setBounds(285, 397, 150, 29);
         panelRSA.add(buttonDeCryptPublic);
 
-        JLabel labelCrySrc = new JLabel("\u5F85\u52A0\u5BC6\u6587\u672C");
+        JLabel labelCrySrc = new JLabel("待加密文本");
         labelCrySrc.setFont(new Font("PingFang SC", Font.PLAIN, 12));
         labelCrySrc.setBounds(701, 130, 60, 22);
         contentPane.add(labelCrySrc);
@@ -435,7 +450,7 @@ public class MainFrame extends JFrame {
         contentPane.add(textFieldCrySrc);
         textFieldCrySrc.setColumns(10);
 
-        JLabel labelCryDes = new JLabel("\u52A0\u5BC6\u540E\u7684\u6587\u672C");
+        JLabel labelCryDes = new JLabel("加密后的文本");
         labelCryDes.setFont(new Font("PingFang SC", Font.PLAIN, 12));
         labelCryDes.setBounds(699, 272, 72, 22);
         contentPane.add(labelCryDes);
@@ -447,7 +462,7 @@ public class MainFrame extends JFrame {
         contentPane.add(textFieldCryDes);
         textFieldCryDes.setColumns(10);
 
-        JLabel labelDecSrc = new JLabel("\u5F85\u89E3\u5BC6/\u8BA4\u8BC1\u6587\u672C");
+        JLabel labelDecSrc = new JLabel("待解密/认证文本");
         labelDecSrc.setFont(new Font("PingFang SC", Font.PLAIN, 12));
         labelDecSrc.setBounds(699, 414, 93, 22);
         contentPane.add(labelDecSrc);
@@ -458,7 +473,7 @@ public class MainFrame extends JFrame {
         contentPane.add(textFieldDecSrc);
         textFieldDecSrc.setColumns(10);
 
-        JLabel labelDecDes = new JLabel("\u89E3\u5BC6/\u8BA4\u8BC1\u540E\u7684\u6587\u672C");
+        JLabel labelDecDes = new JLabel("解密/认证后的文本");
         labelDecDes.setFont(new Font("PingFang SC", Font.PLAIN, 12));
         labelDecDes.setBounds(699, 558, 102, 22);
         contentPane.add(labelDecDes);
@@ -470,9 +485,39 @@ public class MainFrame extends JFrame {
         contentPane.add(textFieldDecDes);
         textFieldDecDes.setColumns(10);
 
-        JButton buttonClear = new JButton("\u6E05\u7A7A\u6570\u636E");
+        JButton buttonClear = new JButton("清除数据");
+        buttonClear.setFont(new Font("PingFang SC", Font.PLAIN, 12));
+        buttonClear.addActionListener(e -> {
+            textFieldCrySrc.setText(null);
+            setEncryptedText(null);
+            setDecryptedText(null);
+        });
         buttonClear.setBounds(982, 134, 117, 29);
         contentPane.add(buttonClear);
-        buttonClear.setFont(new Font("PingFang SC", Font.PLAIN, 12));
+    }
+
+    public String getEncryptionSource() {
+        return textFieldCrySrc.getText();
+    }
+
+    public String getDecryptionSource() {
+        return textFieldDecSrc.getText();
+    }
+
+    public void setEncryptedText(String context) {
+        textFieldCryDes.setText(context);
+        textFieldDecSrc.setText(context);
+    }
+
+    public void setDecryptedText(String context) {
+        textFieldDecDes.setText(context);
+    }
+
+    public JTextField getTextFieldSetAesPwd() {
+        return textFieldSetAesPwd;
+    }
+
+    public JTextField getTextFieldInputAesPwd() {
+        return textFieldInputAesPwd;
     }
 }
