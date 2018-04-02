@@ -30,6 +30,15 @@ public class MainFrame extends JFrame {
 	private JTextField textFieldMd5Src;
 	private JTextField textFieldSetDesPwd;
 	private JTextField textFieldIputDesPwd;
+	private JTextField textFieldExportPfxRoute;
+	private JTextField textFieldSetPfxPwd;
+	private JTextField textFieldExportCerRoute;
+	private JTextField textFieldImportPfxRoute;
+	private JTextField textFieldInputPfxPwd;
+	private JTextField textFieldPubeySouw;
+	private JTextField textFieldPrivateKey;
+	private JTextField textFieldInputSignature;
+	private JButton buttonExportAsCer;
 
 	/**
 	 * Launch the application.
@@ -252,15 +261,199 @@ public class MainFrame extends JFrame {
 		buttonDeDes.setBounds(342, 331, 117, 29);
 		panelMD5AndDES.add(buttonDeDes);
 		
+		JPanel panelCertification = new JPanel();
+		panelCertification.setBackground(Color.WHITE);
+		tabbedPanelAlgorithm.addTab("创建证书", null, panelCertification, null);
+		panelCertification.setLayout(null);
+		
+		JLabel labelOpenSsl = new JLabel("创建含有私钥的证书");
+		labelOpenSsl.setForeground(new Color(30, 144, 255));
+		labelOpenSsl.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		labelOpenSsl.setBounds(27, 10, 144, 29);
+		panelCertification.add(labelOpenSsl);
+		
+		JLabel labelSetSignatire = new JLabel("设置证书签名：");
+		labelSetSignatire.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelSetSignatire.setBounds(37, 56, 100, 16);
+		panelCertification.add(labelSetSignatire);
+		
+		textFieldInputSignature = new JTextField();
+		textFieldInputSignature.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		textFieldInputSignature.setColumns(10);
+		textFieldInputSignature.setBounds(139, 51, 191, 26);
+		panelCertification.add(textFieldInputSignature);
+		
+		JButton buttonGenerateCertification = new JButton("生成");
+		buttonGenerateCertification.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		buttonGenerateCertification.setBounds(342, 51, 117, 29);
+		panelCertification.add(buttonGenerateCertification);
+		
+		JLabel labelExportAsPfx = new JLabel("导出为PFX文件");
+		labelExportAsPfx.setForeground(new Color(30, 144, 255));
+		labelExportAsPfx.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		labelExportAsPfx.setBounds(27, 84, 117, 29);
+		panelCertification.add(labelExportAsPfx);
+		
+		JLabel labelExportPfxRoute = new JLabel("导出路径：");
+		labelExportPfxRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelExportPfxRoute.setBounds(58, 128, 69, 16);
+		panelCertification.add(labelExportPfxRoute);
+		
+		textFieldExportPfxRoute = new JTextField();
+		textFieldExportPfxRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		textFieldExportPfxRoute.setColumns(10);
+		textFieldExportPfxRoute.setBounds(139, 123, 191, 26);
+		panelCertification.add(textFieldExportPfxRoute);
+		
+		JButton buttonSetExportPfxRoute = new JButton("浏览");
+		buttonSetExportPfxRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		buttonSetExportPfxRoute.setBounds(342, 123, 117, 29);
+		panelCertification.add(buttonSetExportPfxRoute);
+		
+		JLabel labelSetPfxPwd = new JLabel("设置密码：");
+		labelSetPfxPwd.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelSetPfxPwd.setBounds(58, 159, 69, 16);
+		panelCertification.add(labelSetPfxPwd);
+		
+		textFieldSetPfxPwd = new JTextField();
+		textFieldSetPfxPwd.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		textFieldSetPfxPwd.setColumns(10);
+		textFieldSetPfxPwd.setBounds(139, 155, 191, 26);
+		panelCertification.add(textFieldSetPfxPwd);
+		
+		JButton buttonExportAsPfx = new JButton("导出");
+		buttonExportAsPfx.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		buttonExportAsPfx.setBounds(342, 155, 117, 29);
+		panelCertification.add(buttonExportAsPfx);
+		
+		JLabel labelExportAsCer = new JLabel("导出为CER文件");
+		labelExportAsCer.setForeground(new Color(30, 144, 255));
+		labelExportAsCer.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		labelExportAsCer.setBounds(27, 193, 117, 29);
+		panelCertification.add(labelExportAsCer);
+		
+		JLabel labelExportCerRoute = new JLabel("导出路径：");
+		labelExportCerRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelExportCerRoute.setBounds(58, 239, 69, 16);
+		panelCertification.add(labelExportCerRoute);
+		
+		textFieldExportCerRoute = new JTextField();
+		textFieldExportCerRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		textFieldExportCerRoute.setColumns(10);
+		textFieldExportCerRoute.setBounds(139, 234, 191, 26);
+		panelCertification.add(textFieldExportCerRoute);
+		
+		JButton buttonSetExportCerRoute = new JButton("浏览");
+		buttonSetExportCerRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		buttonSetExportCerRoute.setBounds(342, 234, 117, 29);
+		panelCertification.add(buttonSetExportCerRoute);
+		
+		buttonExportAsCer = new JButton("导出");
+		buttonExportAsCer.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		buttonExportAsCer.setBounds(342, 266, 117, 29);
+		panelCertification.add(buttonExportAsCer);
+		
 		JPanel panelRSA = new JPanel();
 		panelRSA.setBackground(Color.WHITE);
 		tabbedPanelAlgorithm.addTab("RSA 加密", null, panelRSA, null);
 		panelRSA.setLayout(null);
 		
-		JPanel panelCertification = new JPanel();
-		panelCertification.setBackground(Color.WHITE);
-		tabbedPanelAlgorithm.addTab("创建证书", null, panelCertification, null);
-		panelCertification.setLayout(null);
+		JLabel labelPfxTest = new JLabel("PFX文件的作用");
+		labelPfxTest.setForeground(new Color(30, 144, 255));
+		labelPfxTest.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		labelPfxTest.setBounds(27, 10, 115, 29);
+		panelRSA.add(labelPfxTest);
+		
+		JLabel labelImportPfxRoute = new JLabel("文件路径：");
+		labelImportPfxRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelImportPfxRoute.setBounds(58, 56, 69, 16);
+		panelRSA.add(labelImportPfxRoute);
+		
+		textFieldImportPfxRoute = new JTextField();
+		textFieldImportPfxRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		textFieldImportPfxRoute.setColumns(10);
+		textFieldImportPfxRoute.setBounds(139, 51, 191, 26);
+		panelRSA.add(textFieldImportPfxRoute);
+		
+		JButton buttonSetImportPfxRoute = new JButton("浏览");
+		buttonSetImportPfxRoute.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		buttonSetImportPfxRoute.setBounds(342, 51, 117, 29);
+		panelRSA.add(buttonSetImportPfxRoute);
+		
+		JLabel labelInputPfxPwd = new JLabel("解密密码：");
+		labelInputPfxPwd.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelInputPfxPwd.setBounds(58, 88, 69, 16);
+		panelRSA.add(labelInputPfxPwd);
+		
+		textFieldInputPfxPwd = new JTextField();
+		textFieldInputPfxPwd.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		textFieldInputPfxPwd.setColumns(10);
+		textFieldInputPfxPwd.setBounds(139, 83, 191, 26);
+		panelRSA.add(textFieldInputPfxPwd);
+		
+		JButton buttonGetKeysFromPfx = new JButton("取密钥对");
+		buttonGetKeysFromPfx.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		buttonGetKeysFromPfx.setBounds(342, 83, 117, 29);
+		panelRSA.add(buttonGetKeysFromPfx);
+		
+		JLabel labelPublicKeyAndPrivateKey = new JLabel("私钥加密和公钥解密");
+		labelPublicKeyAndPrivateKey.setForeground(new Color(30, 144, 255));
+		labelPublicKeyAndPrivateKey.setFont(new Font("PingFang SC", Font.PLAIN, 16));
+		labelPublicKeyAndPrivateKey.setBounds(27, 116, 144, 29);
+		panelRSA.add(labelPublicKeyAndPrivateKey);
+		
+		JLabel labelPfxMd5 = new JLabel("证书MD5：");
+		labelPfxMd5.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelPfxMd5.setBounds(58, 157, 69, 16);
+		panelRSA.add(labelPfxMd5);
+		
+		JLabel labelPfxMd5Result = new JLabel("未知");
+		labelPfxMd5Result.setHorizontalAlignment(SwingConstants.CENTER);
+		labelPfxMd5Result.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelPfxMd5Result.setBounds(135, 157, 195, 16);
+		panelRSA.add(labelPfxMd5Result);
+		
+		JLabel labelPfxName = new JLabel("证书名称：");
+		labelPfxName.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelPfxName.setBounds(62, 185, 65, 16);
+		panelRSA.add(labelPfxName);
+		
+		JLabel labelGetPfxName = new JLabel("未知");
+		labelGetPfxName.setHorizontalAlignment(SwingConstants.CENTER);
+		labelGetPfxName.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelGetPfxName.setBounds(135, 185, 195, 16);
+		panelRSA.add(labelGetPfxName);
+		
+		JLabel labelPubKey = new JLabel("公钥：");
+		labelPubKey.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelPubKey.setBounds(88, 219, 39, 16);
+		panelRSA.add(labelPubKey);
+		
+		textFieldPubeySouw = new JTextField();
+		textFieldPubeySouw.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		textFieldPubeySouw.setColumns(10);
+		textFieldPubeySouw.setBounds(135, 213, 300, 80);
+		panelRSA.add(textFieldPubeySouw);
+		
+		JLabel labelPrivateKey = new JLabel("私钥：");
+		labelPrivateKey.setToolTipText("               ");
+		labelPrivateKey.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		labelPrivateKey.setBounds(88, 305, 39, 16);
+		panelRSA.add(labelPrivateKey);
+		
+		textFieldPrivateKey = new JTextField();
+		textFieldPrivateKey.setFont(new Font("PingFang SC", Font.PLAIN, 13));
+		textFieldPrivateKey.setColumns(10);
+		textFieldPrivateKey.setBounds(135, 305, 300, 80);
+		panelRSA.add(textFieldPrivateKey);
+		
+		JButton buttonEnCryptPrivate = new JButton("使用私钥加密");
+		buttonEnCryptPrivate.setBounds(139, 397, 150, 29);
+		panelRSA.add(buttonEnCryptPrivate);
+		
+		JButton buttonDeCryptPublic = new JButton("使用公钥解密");
+		buttonDeCryptPublic.setBounds(285, 397, 150, 29);
+		panelRSA.add(buttonDeCryptPublic);
 		
 		JLabel labelCrySrc = new JLabel("\u5F85\u52A0\u5BC6\u6587\u672C");
 		labelCrySrc.setFont(new Font("PingFang SC", Font.PLAIN, 12));
