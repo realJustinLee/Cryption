@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2dde7a1-67f6-475a-893c-3b401e0777c5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/lixin/model/AES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cryption/com/lixin/controller/Launcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cryption/com/lixin/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cryption/com/lixin/view/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lixin/controller/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lixin/controller/Cryption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lixin/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lixin/view/MainFrame.java" afterDir="false" />
-    </list>
+    <list default="true" id="b2dde7a1-67f6-475a-893c-3b401e0777c5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,7 +51,7 @@
       <file leaf-file-name="AES.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/lixin/model/AES.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
+            <state relative-caret-position="550">
               <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -134,9 +127,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="960" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -283,15 +277,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1522676433139</updated>
-      <workItem from="1522676438694" duration="11371000" />
+      <workItem from="1522676438694" duration="11442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11371000" />
+    <option name="totallyTimeSpent" value="11442000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="937" height="1050" extended-state="0" />
+    <frame x="0" y="22" width="1680" height="960" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
@@ -445,7 +439,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lixin/model/AES.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
+        <state relative-caret-position="550">
           <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
