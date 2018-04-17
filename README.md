@@ -16,8 +16,7 @@
 ### Merged into the Universal Version
 
 ## Universal Version 0.0.1
-### Merged into the Universal Version
-正在加班加点地赶出来，希望大家耐心等待。
+然而只画了个界面，感觉怕是要买个橘子去🍊
 >进度：
 - [x] GUI
 - [x] AES
